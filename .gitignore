@@ -1,0 +1,53 @@
+
+# Simulation output files
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+*.vvp
+*.wlf
+*.ucdb
+*.log
+transcript
+
+# QuestaSim / ModelSim
+work/
+questa_work/
+modelsim.ini
+vsim.wlf
+wlft*
+*.qdb
+*.qpg
+
+# Vivado generated files
+*.jou
+*.str
+*.xpr
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.srcs/sources_1/ip/
+xsim.dir/
+
+# EDA Playground temporary files
+*.out
+*.tmp
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.old
+*.orig
