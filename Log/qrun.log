@@ -1,0 +1,237 @@
+QuestaSim-64 qrun 2025.2 Utility 2025.05 May 31 2025
+Start time: 02:06:41 on Nov 08,2026
+qrun -batch -access=rw+/. -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+** Note: (qrun-220) 'modelsim.ini' is used as the ini file.
+Creating library 'qrun.out/work'.
+QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 02:06:41 on Nov 08,2026
+vlog -timescale 1ns/1ns -mfcu design.sv testbench.sv -work qrun.out/work -statslog qrun.out/stats_log -csession=incr 
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling module axi_apb_bridge
+-- Compiling module axi_write_control
+-- Compiling module axi_read_control
+-- Compiling module address_decoder
+-- Compiling module bridge_fsm
+** Warning: ** while parsing file included at design.sv(7)
+** at bridge_fsm.v(55): (vlog-2182) 'state' might be read before written in always_comb or always @* block.
+-- Compiling module apb_master_controller
+-- Compiling module apb_slave_model
+-- Compiling module tb_axi_apb_bridge
+-- Compiling module tb_axi_write_control
+-- Compiling module axi_read_control_tb
+-- Compiling module address_decoder_tb
+-- Compiling module tb_bridge_fsm
+-- Compiling module tb_apb_master
+-- Compiling module tb_apb_slave_model
+
+Top level modules:
+	tb_axi_apb_bridge
+	tb_axi_write_control
+	axi_read_control_tb
+	address_decoder_tb
+	tb_bridge_fsm
+	tb_apb_master
+	tb_apb_slave_model
+End time: 02:06:41 on Nov 08,2026, Elapsed time: 0:00:00
+Errors: 0, Warnings: 1
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 02:06:41 on Nov 08,2026
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	address_decoder_tb
+	axi_read_control_tb
+	tb_apb_master
+	tb_apb_slave_model
+	tb_axi_apb_bridge
+	tb_axi_write_control
+	tb_bridge_fsm
+
+Analyzing design...
+-- Loading module address_decoder_tb
+-- Loading module axi_read_control_tb
+-- Loading module tb_apb_master
+-- Loading module tb_apb_slave_model
+-- Loading module tb_axi_apb_bridge
+-- Loading module tb_axi_write_control
+-- Loading module tb_bridge_fsm
+-- Loading module bridge_fsm
+-- Loading module axi_write_control
+-- Loading module axi_apb_bridge
+-- Loading module axi_read_control
+-- Loading module address_decoder
+-- Loading module apb_master_controller
+-- Loading module apb_slave_model
+Optimizing 16 design-units (inlining 0/20 module instances):
+-- Optimizing module tb_axi_apb_bridge(fast)
+-- Optimizing module tb_axi_write_control(fast)
+-- Optimizing module tb_bridge_fsm(fast)
+-- Optimizing module tb_apb_slave_model(fast)
+-- Optimizing module axi_read_control_tb(fast)
+-- Optimizing module tb_apb_master(fast)
+-- Optimizing module bridge_fsm(fast)
+** Warning: bridge_fsm.v(55): (vopt-2182) 'state' might be read before written in always_comb or always @* block.
+-- Optimizing module axi_apb_bridge(fast)
+-- Optimizing module apb_master_controller(fast)
+-- Optimizing module axi_write_control(fast)
+-- Optimizing module axi_write_control(fast__1)
+-- Optimizing module address_decoder_tb(fast)
+-- Optimizing module apb_slave_model(fast)
+-- Optimizing module apb_slave_model(fast__1)
+-- Optimizing module axi_read_control(fast)
+-- Optimizing module address_decoder(fast)
+Optimized design name is qrun_opt
+End time: 02:06:42 on Nov 08,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 2
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 02:06:42 on Nov 08,2026
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.address_decoder_tb(fast)
+# Loading work.address_decoder(fast)
+# Loading work.axi_read_control_tb(fast)
+# Loading work.axi_read_control(fast)
+# Loading work.tb_apb_master(fast)
+# Loading work.apb_master_controller(fast)
+# Loading work.tb_apb_slave_model(fast)
+# Loading work.apb_slave_model(fast__1)
+# Loading work.tb_axi_apb_bridge(fast)
+# Loading work.axi_apb_bridge(fast)
+# Loading work.axi_write_control(fast__1)
+# Loading work.bridge_fsm(fast)
+# Loading work.apb_slave_model(fast)
+# Loading work.tb_axi_write_control(fast)
+# Loading work.axi_write_control(fast)
+# Loading work.tb_bridge_fsm(fast)
+# 
+# run -all
+# ** Warning: (vsim-PLI-3110) $dumpfile : This task can be called only once. Please use $fdumpfile()
+# for multiple files.
+#    Time: 0 ps  Iteration: 0  Process: /tb_apb_slave_model/#INITIAL#56 File: APB_slave_model_tb.v Line: 57
+# ** Warning: (vsim-PLI-3110) $dumpfile : This task can be called only once. Please use $fdumpfile()
+# for multiple files.
+#    Time: 0 ps  Iteration: 0  Process: /tb_axi_apb_bridge/#INITIAL#113 File: axi_apb_bridge_top_tb.v Line: 113
+# ** Warning: (vsim-PLI-3110) $dumpfile : This task can be called only once. Please use $fdumpfile()
+# for multiple files.
+#    Time: 0 ps  Iteration: 0  Process: /tb_axi_write_control/#INITIAL#97 File: axi_write_control_tb.v Line: 98
+# ** Warning: (vsim-PLI-3110) $dumpfile : This task can be called only once. Please use $fdumpfile()
+# for multiple files.
+#    Time: 0 ps  Iteration: 0  Process: /tb_bridge_fsm/#INITIAL#68 File: bridge_fsm_tb.v Line: 69
+# PASS :addr=0x00000000 addr_valid=1
+# PASS :addr=0x0000001c addr_valid=1
+# FAIL :addr=0x00000020 expected=1 got=0
+# PASS :addr=0x00000004 addr_valid=1
+# FAIL :addr=0x00000008 expected=0 got=1
+# PASS :addr=0x00000014 addr_valid=1
+# PASS :addr=0x00000018 addr_valid=1
+# PASS :addr=0x00000024 addr_valid=0
+# FAIL :addr=0x00000036 expected=1 got=0
+# PASS :addr=0x00000040 addr_valid=0
+# PASS :addr=0x00000000 addr_valid=1
+# PASS :addr=0x00000001 addr_valid=0
+# PASS :addr=0x00000002 addr_valid=0
+# PASS :addr=0x00000003 addr_valid=0
+# PASS :addr=0x00000004 addr_valid=1
+# PASS :addr=0x00000005 addr_valid=0
+# PASS :addr=0x00000006 addr_valid=0
+# PASS :addr=0x00000007 addr_valid=0
+# PASS :addr=0x00000008 addr_valid=1
+# PASS :addr=0x00000009 addr_valid=0
+# PASS :addr=0x0000000a addr_valid=0
+# PASS :addr=0x0000000b addr_valid=0
+# PASS :addr=0x0000000c addr_valid=1
+# PASS :addr=0x0000000d addr_valid=0
+# PASS :addr=0x0000000e addr_valid=0
+# PASS :addr=0x0000000f addr_valid=0
+# PASS :addr=0x00000010 addr_valid=1
+# PASS :addr=0x00000011 addr_valid=0
+# PASS :addr=0x00000012 addr_valid=0
+# PASS :addr=0x00000013 addr_valid=0
+# PASS :addr=0x00000014 addr_valid=1
+# PASS :addr=0x00000015 addr_valid=0
+# PASS :addr=0x00000016 addr_valid=0
+# PASS :addr=0x00000017 addr_valid=0
+# PASS :addr=0x00000018 addr_valid=1
+# PASS :addr=0x00000019 addr_valid=0
+# PASS :addr=0x0000001a addr_valid=0
+# PASS :addr=0x0000001b addr_valid=0
+# PASS :addr=0x0000001c addr_valid=1
+# PASS :addr=0x0000001d addr_valid=0
+# PASS :addr=0x0000001e addr_valid=0
+# PASS :addr=0x0000001f addr_valid=0
+# PASS :addr=0x00000020 addr_valid=0
+# PASS :addr=0x00000021 addr_valid=0
+# PASS :addr=0x00000022 addr_valid=0
+# PASS :addr=0x00000023 addr_valid=0
+# PASS :addr=0x00000024 addr_valid=0
+# PASS :addr=0x00000025 addr_valid=0
+# PASS :addr=0x00000026 addr_valid=0
+# PASS :addr=0x00000027 addr_valid=0
+# PASS :addr=0x00000028 addr_valid=0
+# PASS :addr=0x00000029 addr_valid=0
+# PASS :addr=0x0000002a addr_valid=0
+# PASS :addr=0x0000002b addr_valid=0
+# PASS :addr=0x0000002c addr_valid=0
+# FAIL T1 wr_resp: got 00000001, expected 00000000
+# PASS :addr=0x0000002d addr_valid=0
+# PASS :addr=0x0000002e addr_valid=0
+# PASS :addr=0x0000002f addr_valid=0
+# PASS :addr=0x00000030 addr_valid=0
+# PASS :addr=0x00000031 addr_valid=0
+# PASS  reset REG0
+# PASS :addr=0x00000032 addr_valid=0
+# PASS :addr=0x00000033 addr_valid=0
+# PASS :addr=0x00000034 addr_valid=0
+# PASS :addr=0x00000035 addr_valid=0
+# PASS :addr=0x00000036 addr_valid=0
+# PASS :addr=0x00000037 addr_valid=0
+# PASS :addr=0x00000038 addr_valid=0
+# PASS :addr=0x00000039 addr_valid=0
+# PASS :addr=0x0000003a addr_valid=0
+# PASS :addr=0x0000003b addr_valid=0
+# PASS :addr=0x0000003c addr_valid=0
+# PASS :addr=0x0000003d addr_valid=0
+# PASS :addr=0x0000003e addr_valid=0
+# PASS :addr=0x0000003f addr_valid=0
+# 3 TESTS FAILED
+# PASS: AW first: address latched, no wr_req yet
+# FAIL T2 rd_resp: got 00000001, expected 00000000
+# PASS: irst: wr_req after W with correct addr/data/strb
+# PASS  write no error
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 95 ns ###############
+#   Active process: Atomic Verilog @ sub-iteration 0
+#   Active process: Atomic Verilog @ sub-iteration 1
+#   Active process: Atomic Verilog @ sub-iteration 2
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 95 ns.
+######## Additional Loop Analysis Started ##########
+##############  Autofindloop Step ##################
+#   Empty Loop
+###################################################
+# exit
+# End time: 02:06:48 on Nov 08,2026, Elapsed time: 0:00:06
+# Errors: 1, Warnings: 4
+End time: 02:06:48 on Nov 08,2026, Elapsed time: 0:00:07
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   1
+    vopt: Errors:   0, Warnings:   2
+    vsim: Errors:   1, Warnings:   4
+  Totals: Errors:   1, Warnings:   7
